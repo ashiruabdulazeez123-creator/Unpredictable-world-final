@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel Goods | Gear from Other Dimensions</title>
+<meta name="description" content="Parallel Goods: a store whose whole look changes every time you visit.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="orbs"><i></i><i></i><i></i></div>
+
+<header class="top">
+  <a class="logo" href="#home">◈ Parallel<b>Goods</b></a>
+  <nav id="nav">
+    <a href="#shop">Shop</a><a href="#why">Why us</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+  </nav>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search products…" aria-label="Search products">
+    <button id="warp" class="ghost" title="Switch dimension">✦ Warp</button>
+    <button id="cartBtn" class="ghost">🛒 <span id="count">0</span></button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <p class="eyebrow" id="worldName"></p>
+  <h1>Gear for people who<br><span class="glow">live in every dimension.</span></h1>
+  <p class="lead">Every time you visit, the whole store changes colour. The products stay out of this world.</p>
+  <div class="cta"><a class="btn" href="#shop">Shop the drop</a><button id="warp2" class="btn alt">Change dimension</button></div>
+  <div class="sale"><span>Flash sale ends in</span><b id="timer">--:--:--</b><small>Use code <code>WORLD10</code> for 10% off</small></div>
+</section>
+
+<div class="strip"><div>✦ FREE SHIPPING OVER $150 ✦ 30-DAY RETURNS ✦ NEW DROP EVERY FRIDAY ✦ SECURE CHECKOUT ✦ FREE SHIPPING OVER $150 ✦ 30-DAY RETURNS ✦ NEW DROP EVERY FRIDAY ✦ SECURE CHECKOUT</div></div>
+
+<section id="shop" class="wrap reveal">
+  <h2>The Collection</h2>
+  <div class="controls">
+    <div id="chips" class="chips"></div>
+    <select id="sort" aria-label="Sort products">
+      <option value="">Featured</option><option value="lo">Price: low to high</option>
+      <option value="hi">Price: high to low</option><option value="rate">Top rated</option>
+    </select>
+  </div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>No products match your search. Try another word.</p>
+</section>
+
+<section id="why" class="wrap reveal">
+  <h2>Why Parallel Goods</h2>
+  <div class="cards">
+    <article><span>🚀</span><h3>Fast delivery</h3><p>Orders leave our warehouse within 24 hours and arrive in 2 to 5 days.</p></article>
+    <article><span>♻️</span><h3>Built to last</h3><p>Recycled materials, repairable designs and a 2-year warranty on every item.</p></article>
+    <article><span>🎲</span><h3>Always new</h3><p>The store reshapes itself each visit. Find the hidden dot for a surprise discount.</p></article>
+    <article><span>🔒</span><h3>Safe checkout</h3><p>Your details never leave your browser in this demo store.</p></article>
+  </div>
+</section>
+
+<section class="stats reveal">
+  <div><b data-n="48200">0</b><span>Happy explorers</span></div>
+  <div><b data-n="120">0</b><span>Countries reached</span></div>
+  <div><b data-n="4.8" data-d="1">0</b><span>Average rating</span></div>
+</section>
+
+<section id="reviews" class="wrap reveal">
+  <h2>What explorers say</h2>
+  <div class="cards">
+    <blockquote>“The Gravity Boots changed my commute. I do not walk anymore, I glide.”<cite>Ada, Lagos</cite></blockquote>
+    <blockquote>“Loved that the site looked different on my second visit. Bought two things.”<cite>Marcus, Berlin</cite></blockquote>
+    <blockquote>“Fast shipping, great quality and the Aurora Lamp is stunning.”<cite>Priya, Mumbai</cite></blockquote>
+  </div>
+</section>
+
+<section id="faq" class="wrap narrow reveal">
+  <h2>Questions</h2>
+  <details><summary>How does the changing website work?</summary><p>Each visit picks a new colour world and remembers the last one so you never see the same one twice in a row.</p></details>
+  <details><summary>How long does shipping take?</summary><p>Standard delivery takes 2 to 5 business days. Orders over $150 ship free.</p></details>
+  <details><summary>Can I return an item?</summary><p>Yes. You have 30 days to return anything unused for a full refund.</p></details>
+  <details><summary>Is this a real store?</summary><p>This is a demo. Checkout is simulated and no payment is taken.</p></details>
+</section>
+
+<section class="wrap narrow news reveal">
+  <h2>Join the multiverse</h2>
+  <p>Get early access to every Friday drop.</p>
+  <form id="newsForm"><input id="newsEmail" type="email" placeholder="you@email.com" required><button class="btn">Subscribe</button></form>
+</section>
+</main>
+
+<footer><p>◈ ParallelGoods · Demo store · © 2026</p><a href="#home">Back to top ↑</a></footer>
+
+<dialog id="modal"></dialog>
+
+<aside id="cart" class="drawer" aria-label="Shopping cart">
+  <div class="dhead"><h3>Your cart</h3><button id="closeCart" class="ghost">✕</button></div>
+  <div id="items"></div>
+  <div class="dfoot">
+    <div class="promo"><input id="promo" placeholder="Promo code"><button id="applyPromo" class="ghost">Apply</button></div>
+    <div id="totals"></div>
+    <button id="checkoutBtn" class="btn full">Checkout</button>
+  </div>
+</aside>
+<div id="shade"></div>
+
+<dialog id="checkout">
+  <form id="payForm" novalidate>
+    <h3>Checkout</h3>
+    <label>Full name<input id="fName" required></label>
+    <label>Email<input id="fEmail" type="email" required></label>
+    <label>Address<input id="fAddr" required></label>
+    <label>Card number<input id="fCard" inputmode="numeric" maxlength="19" placeholder="4242 4242 4242 4242" required></label>
+    <p id="err" class="err"></p>
+    <div class="cta"><button type="button" id="cancelPay" class="btn alt">Cancel</button><button class="btn">Pay now</button></div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+<script src="fx.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
